@@ -1,0 +1,17 @@
+/* pages/travel/travel.wxss */
+.travel{
+  width: 100%;
+  display: flex;
+  
+}
+.travel view{
+  width: auto;
+  white-space: nowrap;
+  padding:15rpx 20rpx;
+  font-size: 30rpx;
+  color: #353535;
+}
+.travel view.hov{
+  border-bottom: 6rpx solid #FF5252;
+  color: #FF5252;
+}

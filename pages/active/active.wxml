@@ -1,0 +1,18 @@
+<view class='list' wx:for='{{activeList}}' data-id='{{item.id}}' data-state='{{item.state}}' bindtap='activeDetail'>
+  <image src='{{item.path}}'></image>
+  <view class='tit'>
+    <text class='tita'>{{item.title}}</text>
+    <text class='titb'>{{item.start}}-{{item.end}}</text>
+  </view>
+</view>
+
+
+<view class='footer'>
+  <view class='foot'>
+    <view class='hov'><navigator url='../active/active'><image src='../images/bar_icon11.gif'></image>活动</navigator></view>
+    <view><navigator url='../travel/travel'><image src='../images/bar_icon2.gif'></image>导游</navigator></view>
+    <view><navigator url='../about/about'><image src='../images/bar_icon3.gif'></image>关于</navigator></view>
+    <view><navigator url='../tool/tool'><image src='../images/bar_icon4.gif'></image>工具</navigator></view>
+  </view>
+</view>
+

@@ -1,0 +1,11 @@
+/* pages/hand/hand.wxss */
+.chooseitem{
+  margin-top: 30rpx;
+}
+.chooseitem radio{margin-right: 20rpx;}
+.chooseitem label{
+  display: block;
+  border-bottom: 1px solid #ddd;
+  padding: 20rpx;
+  font-size: 36rpx;
+}

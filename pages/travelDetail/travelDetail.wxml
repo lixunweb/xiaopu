@@ -1,0 +1,22 @@
+<view class='list'>
+  <image src='../images/hdimg.jpg'></image>
+  <view class='tit'>
+    <text class='tita'>航向边缘作品征集</text>
+  </view>
+  <view class='time'>
+    <view class='tima'>营业时间</view>
+    <view class='timb'>
+      <text>上午 09:00-12:00</text>
+      <text>下午 14:00-12:00</text>
+    </view>
+  </view>
+</view>
+<view class='container mt50'>
+  <view class='content'>
+    <text>展览“航向边缘：吉莲·艾尔斯的抽象绘画，1979年至今”为中国观众带来了一位女性艺术家复杂而感性的艺术——她是英国各大艺术学院聘用的第一位女性绘画系主任，曾作为唯一女性艺术家跻身英国战后最重要的艺术展览“境况”（1960），并在过去一个甲子的岁月里不断创造并重新创造着自己的艺术。</text>
+  </view>
+</view>
+
+<view class='btn'>
+  <view class='btn_red'>去这里</view>
+</view>

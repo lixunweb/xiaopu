@@ -1,0 +1,23 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/hand/hand",
+    "pages/activeUpload/activeUpload",
+    "pages/newDetail/newDetail",
+    "pages/about/about",
+    "pages/photo/photo",
+    "pages/travelDetail/travelDetail",
+    "pages/travel/travel",
+    "pages/show/show",
+    "pages/tool/tool",    
+    "pages/active/active",
+    
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小堡生活圈",
+    "navigationBarTextStyle":"black"
+  }
+}

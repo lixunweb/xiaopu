@@ -1,0 +1,24 @@
+/* pages/active/active.wxss */
+.tit{
+  width: 750rpx;height: 375rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+.tit text{
+  display: block;
+  color: #fff;
+}
+.tita{
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.titb{
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}

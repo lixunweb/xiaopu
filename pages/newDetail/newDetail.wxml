@@ -1,0 +1,15 @@
+<view class='list'>
+  <image src='../images/hdimg.jpg'></image>
+</view>
+<view class='container'>
+  <view class='h1'>活动须知</view>
+  <view class='content'>
+    <text>作品征集活动时间2017/7/30－8/27，上上国际美术馆（北京 通州区 宋庄小堡村 ）开展当天（7月30日）。</text>
+    <text>注：上传作品先通过初选后再于指定地点提交作品原件。</text>
+  </view>
+  <view class='h1'>活动详情</view>
+  <view class='content'>
+    <text>展览“航向边缘：吉莲·艾尔斯的抽象绘画，1979年至今”为中国观众带来了一位女性艺术家复杂而感性的艺术——她是英国各大艺术学院聘用的第一位女性绘画系主任，曾作为唯一女性艺术家跻身英国战后最重要的艺术展览“境况”（1960），并在过去一个甲子的岁月里不断创造并重新创造着自己的艺术。</text>
+  </view>
+  
+</view>

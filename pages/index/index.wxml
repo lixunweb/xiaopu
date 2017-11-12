@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class='body'>
+  <view class='time'>倒计时 {{timeNum}}</view>
+  <view class='texta'>欢迎来到小堡村</view>
+  <view class='textb'>Welcome To Xiaopu Village</view>
+  <view class='enter' bindtap='stop'>进  入</view>
+  <view class='yindaoimg'><image src='../images/yinda.jpg'></image></view>
+</view>

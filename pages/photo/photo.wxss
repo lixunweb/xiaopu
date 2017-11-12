@@ -1,0 +1,12 @@
+/* pages/photo/photo.wxss */
+.photo{
+  margin:10rpx;
+}
+.photo view{
+  width: 365rpx;height: 220rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  }
+.photo image{width: 345rpx;height: 200rpx;}

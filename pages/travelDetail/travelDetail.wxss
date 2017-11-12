@@ -1,0 +1,18 @@
+/* pages/travelDetail/travelDetail.wxss */
+.tit{
+  position: absolute;
+  bottom: 85rpx;
+  left: 30rpx;
+  z-index: 2;
+  color: #fff;
+}
+.time{
+  position: absolute;
+  left: 30rpx;
+  bottom:10rpx;
+  font-size: 26rpx;
+  display: flex;
+  color: #fff;
+}
+.timb{margin-left: 20rpx;}
+.timb text{display: block;}

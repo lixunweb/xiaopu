@@ -1,0 +1,24 @@
+<view class='container'>
+  <view class='area'>
+    <textarea placeholder='输入内容' name='area'></textarea>
+  </view>
+  <view class='imgbox'>
+    <view class='choose' wx:for='{{dsrc}}' bindtap='chooseDel'>
+      <image src='{{item}}'></image>
+    </view>
+    <view class='choose' bindtap='choose'>
+      <image src='../images/chooimg.gif'></image>
+    </view>
+  </view>
+  <view class='chooseitem'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label><radio value='1' name='type'></radio>突发事件</label>
+      <label><radio value='2' name='type'></radio>我眼中的小堡</label>
+      <label><radio value='3' name='type'></radio>投诉建议</label>
+    </radio-group>
+  </view>
+</view>
+
+<view class='btn'>
+  <view class='btn_red'>上传</view>
+</view>

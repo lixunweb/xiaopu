@@ -1,0 +1,23 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../wxParse/wxParse.wxss"/>
+<view class='list'>
+  <image src='{{activeDetail.path}}'></image>
+  <view class='tit'>
+    <text class='tita'>{{activeDetail.title}}</text>
+  </view>
+</view>
+<view class='container'>
+  <view class='h1'>活动须知</view>
+  <view class='content'>
+    <template is="wxParse" data="{{wxParseData:info.nodes}}"/>
+  </view>
+  <view class='h1'>活动详情</view>
+  <view class='content'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  
+</view>
+<view class='btn'>
+  <view class='btn_red' bindtap='map' data-name='{{activeDetail.address}}' data-lat='{{activeDetail.latitude}}' data-lon='{{activeDetail.longitude}}' wx:if='{{activeDetail.state>1}}'>去这里</view>
+  <view class='btn_red' bindtap='upload' wx:else>上传作品</view>
+</view>

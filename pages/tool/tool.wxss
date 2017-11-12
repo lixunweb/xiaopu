@@ -1,0 +1,13 @@
+.tool{
+  display: flex;
+  float: left;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 375rpx;height: 375rpx;
+  border-left:1px solid #efeff4;
+  border-bottom: 1px solid #efeff4;
+  margin:-1px 0 0 -1px;
+  font-size: 30rpx;
+}
+.tool image{width: 120rpx;height: 120rpx;display: block;margin-bottom: 20rpx;}

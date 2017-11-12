@@ -1,0 +1,8 @@
+<view class='photo'>
+  <view><image src='../images/hdimg.jpg'></image></view>
+  <view><image src='../images/hdimg.jpg'></image></view>
+  <view><image src='../images/hdimg.jpg'></image></view>
+  <view><image src='../images/hdimg.jpg'></image></view>
+  <view><image src='../images/hdimg.jpg'></image></view>
+  <view><image src='../images/hdimg.jpg'></image></view>
+</view>
