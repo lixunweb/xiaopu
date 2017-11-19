@@ -1,15 +1,22 @@
 // pages/travel/travel.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
+  detail:function(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '../travelDetail/travelDetail?id=' + e.markerId,
+    })
+  },
   data: {
     x:'113.324520',
     y:'23',
     markers: [{
       // iconPath: "../images/map.png",
-      id: 0,
+      id: 1,
       latitude: 23,
       longitude: 113.32452,
       callout:{
@@ -29,7 +36,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this;
+    wx.request({
+      url: app.globalData.url + 'api/index/trip_cat_list',
+      success:function(res){
+        console.log(res)
+        that.setData({
+          nav:res.data.data
+        })
+      }
+    })
   },
 
   /**

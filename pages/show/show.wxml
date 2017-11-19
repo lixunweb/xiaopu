@@ -19,5 +19,5 @@
 </view>
 <view class='btn'>
   <view class='btn_red' bindtap='map' data-name='{{activeDetail.address}}' data-lat='{{activeDetail.latitude}}' data-lon='{{activeDetail.longitude}}' wx:if='{{activeDetail.state>1}}'>去这里</view>
-  <view class='btn_red' bindtap='upload' wx:else>上传作品</view>
+  <view class='btn_red' bindtap='upload' wx:else data-id='{{activeDetail.id}}'>上传作品</view>
 </view>

@@ -1,18 +1,106 @@
 // pages/activeUpload/activeUpload.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
+  choose: function () {
+    var that = this
+    var dsrc = this.data.dsrc
+    var picid=this.data.picid
+    wx.chooseImage({
+      success: function (res) {
+        var imgsrc = res.tempFilePaths;//这里是选好的图片的地址，是一个数组
+        dsrc = dsrc.concat(imgsrc);
+        that.setData({
+          dsrc: dsrc
+        })
+        console.log(imgsrc[0])
+        var src=imgsrc[0]
+        if (imgsrc.length>1){
+          picid =[];
+          for (var i = 0; i < dsrc.length; i++) {
+            wx.uploadFile({
+              url: app.globalData.url + 'api/index/upload', //仅为示例，非真实的接口地址
+              filePath: dsrc[i],
+              name: 'picture',
+              success: function (res) {
+                console.log(res.data)
+                var obj = JSON.parse(res.data);
+                console.log(obj.data.pic_id)
+                var pic_id = obj.data.pic_id
+                picid = picid.concat(pic_id)
+                that.setData({
+                  picid: picid
+                })
+                console.log(picid)
+                //do something
+              }
+            })
+          }
+        }
+        else{
+          wx.uploadFile({
+            url: app.globalData.url + 'api/index/upload', //仅为示例，非真实的接口地址
+            filePath: dsrc[0],
+            name: 'picture',
+            success: function (res) {
+              console.log(res.data)
+              var obj = JSON.parse(res.data);
+              console.log(obj.data.pic_id)
+              var pic_id = obj.data.pic_id
+              picid = picid.concat(pic_id)
+              that.setData({
+                picid: picid
+              })
+              console.log(picid)
+              //do something
+            }
+          })
+        }
+        
+       
+
+      }
+    })
+  },
+  bindFormSubmit:function(e){
+    var pic_list=(this.data.picid).toString();
+    wx.request({
+      url: app.globalData.url + 'api/index/works_save',
+      data: { activity_id: this.data.id, title: e.detail.value.area, pic_list: pic_list},
+      success:function(res){
+        console.log(res.data)
+        if (res.data.ret == 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 2000
+          })
+        }
+        else {
+          wx.showModal({
+            title: '保存失败',
+            content: res.data.msg
+          })
+        }
+      }
+    })
+  },
   data: {
-  
+    dsrc: [],
+    picid:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+    that.setData({
+      id:options.id
+    })
   },
 
   /**

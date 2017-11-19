@@ -43,7 +43,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.request({
+      url: app.globalData.url_hos +'/page/15548337',
+      method:'POST',
+      success:function(res){
+        console.log(res.data)
+      }
+    })
   },
 
   /**

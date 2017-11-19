@@ -1,55 +1,60 @@
-// pages/show/show.js
+// pages/people/people.js
 const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
-  map:function(e){
-    wx.openLocation({
-      latitude: Number(e.currentTarget.dataset.lat),
-      longitude: Number(e.currentTarget.dataset.lon),
-      name: e.currentTarget.dataset.name,
-      scale: 15
-    })  
-
+  tab1: function () {
+    var that = this
+    that.setData({
+      hidden: true,
+      show: false
+    })
   },
-  upload:function(e){
+  tab2: function () {
+    var that = this
+    that.setData({
+      hidden: false,
+      show: true
+    })
+  },
+  detail: function (e) {
+    console.log(e)
     wx.navigateTo({
-      url: '../activeUpload/activeUpload?id='+e.currentTarget.dataset.id,
+      url: '../guahao/guahao?id=' + e.currentTarget.dataset.id,
     })
   },
   data: {
-  
+    hidden: true,
+    show: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
-    console.log(options.state)
-    var id = options.id;
-    var state = options.state;
-    var that = this
-    that.setData({
-      id:id,
-      state:state
-    })
-    var WxParse = require('../../wxParse/wxParse.js');
+    var that=this
     wx.request({
-      url: app.globalData.url + 'api/index/activity_info',
-      data: {activity_id:id},
+      url: app.globalData.url + 'api/index/hospital_list',
       success: function (res) {
-        console.log(res.data)
+        console.log(res)
         that.setData({
-          activeDetail: res.data.data,
-          content: WxParse.wxParse('article', 'html', res.data.data.info, that, 5),
-          content: WxParse.wxParse('info', 'html', res.data.data.notice, that, 5)
+          list: res.data.data.data.list
         })
       }
     })
-
+    var WxParse = require('../../wxParse/wxParse.js');
+    wx.request({
+      url: app.globalData.url + 'api/index/about_info',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          content: WxParse.wxParse('article', 'html', res.data.data.detail, that, 5),
+          info: res.data.data
+        })
+      }
+    })
   },
 
   /**

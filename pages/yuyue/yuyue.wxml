@@ -1,0 +1,33 @@
+<form bindsubmit="bindFormSubmit">
+<view class='container'>
+  <view class='h2'>挂号信息</view>
+  <view class='txt'>
+    <text class='la'>科室</text><text class='lb'>北京东直门医院-心血管内科</text>
+  </view>
+  <view class='txt'>
+    <text class='la'>医生</text><text class='lb'>医生一</text>
+  </view>
+  <view class='txt'>
+    <text class='la'>时间</text><text class='lb'>2017-08-17</text>
+  </view>
+  <view class='txt'>
+    <text class='la'>医师服务费</text><text class='lb'>￥30</text>
+  </view>
+  <view class='h2'>个人信息</view>
+  <view class='txt'>
+    <text class='la'>身份证号</text><input name='sfz' placeholder='身份证号' class='in1'></input>
+  </view>
+  <view class='txt'>
+    <text class='la'>手机号</text><input name='phone' bindinput='phone' placeholder='手机号' class='in1'></input>
+  </view>
+  <view class='txt'>
+    <text class='la'>医保卡号</text><input name='ybh' placeholder='医保卡号' class='in1'></input>
+  </view>
+  <view class='txt'>
+    <text class='la'>验证码</text><input name='code' placeholder='验证码' class='in1 in2'></input> <view class='in1 code' bindtap='code'>获取验证码</view>
+  </view>
+</view>
+<view class='btn'>
+  <button class='btn_red' form-type="submit">确认预约</button>
+</view>
+</form>

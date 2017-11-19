@@ -1,55 +1,64 @@
-// pages/show/show.js
+// pages/guahao/guahao.js
 const app = getApp()
+var query=function(that){
+  console.log(that.data.id)
+  wx.request({
+    url: app.globalData.url + 'api/hospital/guahao_two',
+    data: { parentId: that.data.id },
+    success: function (res) {
+      console.log(res.data)
+      that.setData({
+        two: res.data.data.dept,
+        clname:'hov'
+      })
+    }
+  })
+}
 Page({
 
   /**
    * 页面的初始数据
    */
-  map:function(e){
-    wx.openLocation({
-      latitude: Number(e.currentTarget.dataset.lat),
-      longitude: Number(e.currentTarget.dataset.lon),
-      name: e.currentTarget.dataset.name,
-      scale: 15
-    })  
-
+  queryTwo: function (e) {
+    var that = this
+    that.setData({
+      Select: e.currentTarget.dataset.name,
+      id: e.currentTarget.dataset.id
+    })
+    query(that);
   },
-  upload:function(e){
+  detail:function(e){
     wx.navigateTo({
-      url: '../activeUpload/activeUpload?id='+e.currentTarget.dataset.id,
+      url: '../keshi/keshi?hosid='+e.currentTarget.dataset.hosid+'&id='+e.currentTarget.dataset.id,
     })
   },
   data: {
-  
+   id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
-    console.log(options.state)
-    var id = options.id;
-    var state = options.state;
-    var that = this
-    that.setData({
-      id:id,
-      state:state
-    })
-    var WxParse = require('../../wxParse/wxParse.js');
+    var that=this
+    
     wx.request({
-      url: app.globalData.url + 'api/index/activity_info',
-      data: {activity_id:id},
+      url: app.globalData.url + 'api/hospital/guahao_one',
+      data: { hospitalId:options.id},
       success: function (res) {
         console.log(res.data)
+        console.log(res.data.data.dept[0].id)
         that.setData({
-          activeDetail: res.data.data,
-          content: WxParse.wxParse('article', 'html', res.data.data.info, that, 5),
-          content: WxParse.wxParse('info', 'html', res.data.data.notice, that, 5)
+          one: res.data.data.dept,
+          id: res.data.data.dept[0].id,
+          Select: res.data.data.dept[0].name
         })
       }
     })
-
+    
+    setTimeout(function () {
+      query(that);
+    }, 1000)
   },
 
   /**

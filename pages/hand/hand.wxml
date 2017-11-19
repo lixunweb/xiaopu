@@ -1,3 +1,4 @@
+<form bindsubmit="bindFormSubmit">
 <view class='container'>
   <view class='area'>
     <textarea placeholder='输入内容' name='area'></textarea>
@@ -20,5 +21,6 @@
 </view>
 
 <view class='btn'>
-  <view class='btn_red'>上传</view>
+  <button class='btn_red' form-type="submit">上传</button>
 </view>
+</form>

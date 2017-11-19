@@ -1,6 +1,10 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/yuyue/yuyue",
+    "pages/active/active",
+    "pages/keshi/keshi",
+    "pages/guahao/guahao",
     "pages/hand/hand",
     "pages/activeUpload/activeUpload",
     "pages/newDetail/newDetail",
@@ -9,9 +13,8 @@
     "pages/travelDetail/travelDetail",
     "pages/travel/travel",
     "pages/show/show",
-    "pages/tool/tool",    
-    "pages/active/active",
-    
+    "pages/tool/tool",
+    "pages/people/people",       
     "pages/logs/logs"
   ],
   "window":{

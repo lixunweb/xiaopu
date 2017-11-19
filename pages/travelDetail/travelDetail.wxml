@@ -1,13 +1,14 @@
 <view class='list'>
-  <image src='../images/hdimg.jpg'></image>
+  <image src='{{travel.path}}'></image>
   <view class='tit'>
-    <text class='tita'>航向边缘作品征集</text>
+    <text class='tita'>{{travel.title}}</text>
   </view>
+  <view class='tuji' bindtap='photo' data-id='{{travel.id}}'>图集</view>
   <view class='time'>
     <view class='tima'>营业时间</view>
     <view class='timb'>
-      <text>上午 09:00-12:00</text>
-      <text>下午 14:00-12:00</text>
+      <text>上午 {{travel.morning}}</text>
+      <text>下午 {{travel.afternoon}}</text>
     </view>
   </view>
 </view>
@@ -18,5 +19,5 @@
 </view>
 
 <view class='btn'>
-  <view class='btn_red'>去这里</view>
+  <view class='btn_red' bindtap='map' data-name='{{travel.title}}' data-lat='{{travel.latitude}}' data-lon='{{travel.longitude}}'>去这里</view>
 </view>

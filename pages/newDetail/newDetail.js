@@ -1,4 +1,5 @@
 // pages/newDetail/newDetail.js
+const app = getApp()
 Page({
 
   /**
@@ -12,7 +13,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var id = options.id;
+    var that = this
+    that.setData({
+      id: id
+    })
+    var WxParse = require('../../wxParse/wxParse.js');
+    wx.request({
+      url: app.globalData.url + 'api/index/news_info',
+      data: { news_id: id },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          activeDetail: res.data.data,
+          content: WxParse.wxParse('info', 'html', res.data.data.info, that, 5)
+        })
+      }
+    })
   },
 
   /**

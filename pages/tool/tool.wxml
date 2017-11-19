@@ -2,7 +2,7 @@
 <view class='box'>
   <view class='tool'><navigator url='../hand/hand'><image src='../images/tool1.gif'></image>随手拍</navigator></view>
   <view class='tool'><image src='../images/tool2.gif'></image>垃圾回收</view>
-  <view class='tool'><image src='../images/tool2.gif'></image>小堡人家</view>
+  <view class='tool'><navigator url='../people/people'><image src='../images/tool2.gif'></image>小堡人家</navigator></view>
   <view class='tool'></view>
   <view class='tool'></view>
   <view class='tool'></view>
@@ -10,9 +10,9 @@
 
 <view class='footer'>
   <view class='foot'>
-    <view><navigator url='../active/active'><image src='../images/bar_icon1.gif'></image>活动</navigator></view>
-    <view><navigator url='../travel/travel'><image src='../images/bar_icon2.gif'></image>导游</navigator></view>
-    <view><navigator url='../about/about'><image src='../images/bar_icon3.gif'></image>关于</navigator></view>
-    <view class='hov'><navigator url='../tool/tool'><image src='../images/bar_icon44.gif'></image>工具</navigator></view>
+    <view><navigator url='../active/active' open-type='redirect'><image src='../images/bar_icon1.gif'></image>活动</navigator></view>
+    <view><navigator url='../travel/travel' open-type='redirect'><image src='../images/bar_icon2.gif'></image>导游</navigator></view>
+    <view><navigator url='../about/about' open-type='redirect'><image src='../images/bar_icon3.gif'></image>关于</navigator></view>
+    <view class='hov'><navigator url='../tool/tool' open-type='redirect'><image src='../images/bar_icon44.gif'></image>工具</navigator></view>
   </view>
 </view>

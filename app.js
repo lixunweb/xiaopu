@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    url:'https://xpc.yoopu.cn/'
+    url:'https://xpc.yoopu.cn/',
+    url_hos:'https://www.showdoc.cc'
   }
 })

@@ -1,9 +1,11 @@
 // pages/photo/photo.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
+ 
   data: {
   
   },
@@ -12,7 +14,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+    wx.request({
+      url: app.globalData.url + 'api/index/trips_pic',
+      data: { trips_id: options.id},
+      success:function(res){
+        console.log(res.data)
+        that.setData({
+          photo: res.data.data
+        })
+      }
+    })
+    
   },
 
   /**

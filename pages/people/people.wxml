@@ -1,0 +1,31 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../wxParse/wxParse.wxss"/>
+<view class='tab'>
+  <view bindtap='tab1' class='{{hidden?"hov":""}}'>健康养生</view>
+  <view bindtap='tab2' class='{{show?"hov":""}}'>小堡概览</view>
+</view>
+<view class='container'>
+  <view class='new' wx:if='{{hidden}}'>
+  <view class='newlist' wx:for='{{list}}' data-id='{{item.contentID}}' bindtap='detail'>
+    <view class='listimg'><image src='{{item.content.coverUrl}}'></image></view>
+    <view class='txt'>
+      <text class='h1'>{{item.content.title}}</text>
+      <text class='date'></text>
+    </view>
+  </view>
+  
+</view>
+
+<view class='me' wx:if='{{show}}'>
+  <view class='list'>
+    <image src='{{info.path}}'></image>
+    <view class='tit'>
+      <text class='tita'>{{info.title}}</text>
+    </view>
+  </view>
+  <view class='content'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+
+</view>

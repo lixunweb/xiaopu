@@ -1,25 +1,18 @@
 
   <scroll-view scroll-x>
     <view class='travel'>
-      <view class='hov'>画室</view>
-      <view>美术馆</view>
-      <view>美食</view>
-      <view>公共厕所</view>
-      <view>画家</view>
-      <view>健身场馆</view>
-      <view>培训机构</view>
-      <view>画室</view>
+      <view class='hov' wx:for='{{nav}}' data-id='{{item.id}}'>{{item.title}}</view>
     </view>
   </scroll-view>
-  <map id="map" longitude="{{x}}" latitude="{{y}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" show-location style="width: 100%; height:1020rpx;"></map>
+  <map id="map" longitude="{{x}}" latitude="{{y}}" scale="14" controls="{{controls}}" markers="{{markers}}" bindcallouttap="detail" show-location style="width: 100%; height:1020rpx;"></map>
 
 
 
 <view class='footer'>
   <view class='foot'>
-    <view><navigator url='../active/active'><image src='../images/bar_icon1.gif'></image>活动</navigator></view>
-    <view class='hov'><navigator url='../travel/travel'><image src='../images/bar_icon22.gif'></image>导游</navigator></view>
-    <view><navigator url='../about/about'><image src='../images/bar_icon3.gif'></image>关于</navigator></view>
-    <view><navigator url='../tool/tool'><image src='../images/bar_icon4.gif'></image>工具</navigator></view>
+    <view><navigator url='../active/active' open-type='redirect'><image src='../images/bar_icon1.gif'></image>活动</navigator></view>
+    <view class='hov'><navigator url='../travel/travel' open-type='redirect'><image src='../images/bar_icon22.gif'></image>导游</navigator></view>
+    <view><navigator url='../about/about' open-type='redirect'><image src='../images/bar_icon3.gif'></image>关于</navigator></view>
+    <view><navigator url='../tool/tool' open-type='redirect'><image src='../images/bar_icon4.gif'></image>工具</navigator></view>
   </view>
 </view>

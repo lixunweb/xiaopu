@@ -16,3 +16,13 @@
 }
 .timb{margin-left: 20rpx;}
 .timb text{display: block;}
+.tuji{
+  position: absolute;
+  right: 20rpx;
+  bottom:30rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border:1px solid #fff;
+  border-radius: 10rpx;
+  padding:3rpx 10rpx;
+}

@@ -1,0 +1,7 @@
+/* pages/yuyue/yuyue.wxss */
+.h2{font-size: 36rpx;border-bottom: 1rpx solid #ddd;padding: 10rpx 0; text-indent: 20rpx;margin: 20rpx 0;}
+.txt{line-height: 50rpx;margin-top: 10rpx;font-size: 24rpx;}
+.txt .la{display: block;width:140rpx;margin-left: 20rpx;float: left;}
+.txt .in1{width: 440rpx; padding:0 10rpx;height: 50rpx;border:1px solid #ddd;float: left;border-radius: 10rpx; margin-bottom: 10rpx;}
+.txt input.in2,.txt .code{width: 210rpx;}
+.txt .code{color: #dc4056;text-align: center; margin-left: 10rpx;padding:3rpx;}

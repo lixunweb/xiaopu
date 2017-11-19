@@ -1,8 +1,3 @@
 <view class='photo'>
-  <view><image src='../images/hdimg.jpg'></image></view>
-  <view><image src='../images/hdimg.jpg'></image></view>
-  <view><image src='../images/hdimg.jpg'></image></view>
-  <view><image src='../images/hdimg.jpg'></image></view>
-  <view><image src='../images/hdimg.jpg'></image></view>
-  <view><image src='../images/hdimg.jpg'></image></view>
+  <view wx:for='{{photo}}'><image src='{{item.path}}'></image></view>
 </view>

@@ -1,0 +1,42 @@
+<view class='ksname'>
+  <text>一级科室</text>二级科室
+</view>
+<view class='month'>8月</view>
+<view class='week'>
+<block wx:for='{{List}}'>
+  <view wx:if='{{index==0}}' bindtap='week' data-index='{{index}}' data-dateStr='{{item.dateStr}}' class='{{item.dateStr==dateStr ? "hov":""}}' style='border:none'><text>{{item.dateStr}}</text><text>{{item.xingQi}}</text></view>
+  <view wx:else bindtap='week' data-index='{{index}}' data-dateStr='{{item.dateStr}}' class='{{item.dateStr==dateStr ? "hov":""}}'><text>{{item.dateStr}}</text><text>{{item.xingQi}}</text></view>
+</block>
+</view>
+<view class='day'>
+  <view data-num='0' bindtap='num' class='{{mm ? "hov":""}}'><text>上午</text><text>剩余：{{week1.amyyNum}}</text></view>
+  <view data-num='1' bindtap='num' class='{{mm ? "":"hov"}}'><text>下午</text><text>剩余：{{week1.pmyyNum}}</text></view>
+</view>
+<block wx:if='{{mm}}'>
+  <view class='yslist' wx:for='{{week1.amYiShiEntityList}}'>
+    <view class='lista'>
+      <view>医生一</view>
+      <view class='mid'>王奕盛</view>
+      <view>主任医师</view>
+    </view>
+    <view class='listb'>
+      <view class='btny' bindtap='order'>预约</view>
+      <view class='mid'>挂号费：￥{{item.ysFwf}}</view>
+      <view>剩余号：1</view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class='yslist' wx:for='{{week1.pmYiShiEntityList}}'>
+    <view class='lista'>
+      <view>医生一</view>
+      <view class='mid'>王奕盛</view>
+      <view>主任医师</view>
+    </view>
+    <view class='listb'>
+      <view class='btny'>预约</view>
+      <view class='mid'>挂号费：￥{{item.ysFwf}}</view>
+      <view>剩余号：1</view>
+    </view>
+  </view>
+</block>
