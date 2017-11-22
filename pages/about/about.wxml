@@ -22,6 +22,9 @@
     <view class='tit'>
       <text class='tita'>{{info.title}}</text>
     </view>
+    <view class='titb'>
+      <image src='../images/add.png'></image>{{info.address}}
+    </view>
   </view>
   <view class='content'>
     <template is="wxParse" data="{{wxParseData:article.nodes}}"/>

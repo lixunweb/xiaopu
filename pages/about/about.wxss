@@ -36,3 +36,13 @@
   left: 0;
 }
 .listimg image{width: 230rpx;height: 155rpx;}
+.titb{
+position:absolute;
+bottom:10rpx;
+line-height: 40rpx;
+left:30rpx;
+font-size: 26rpx;
+color: #fff;
+z-index:2;
+}
+.titb image{width: 31rpx;height: 41rpx;float:left;margin:0 10rpx 0 0}

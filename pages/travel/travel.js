@@ -1,10 +1,47 @@
 // pages/travel/travel.js
 const app = getApp()
+var travelList=function(that){
+  wx.request({
+    url: app.globalData.url + 'api/index/trips_list',
+    data: { cat_id: that.data.id },
+    success: function (res) {
+      console.log(res.data)
+      that.setData({
+        x: res.data.data[0].latitude,
+        y: res.data.data[0].longitude,
+        markers: [{
+          // iconPath: "../images/map.png",
+          id: res.data.data[0].id,
+          latitude: res.data.data[0].latitude,
+          longitude: res.data.data[0].longitude,
+          callout: {
+            content: res.data.data[0].title,
+            bgColor: "#fff",
+            color: "#333",
+            fontSize: 18,
+            padding: 10,
+            borderRadius: 5,
+            display: 'ALWAYS'
+          }
+
+        }]
+      })
+    }
+  })
+}
 Page({
 
   /**
    * 页面的初始数据
    */
+  nav:function(e){
+    var that=this
+    that.setData({
+      title:e.currentTarget.dataset.title,
+      id: e.currentTarget.dataset.id
+    })
+    travelList(that)
+  },
   detail:function(e) {
     console.log(e)
     wx.navigateTo({
@@ -12,24 +49,6 @@ Page({
     })
   },
   data: {
-    x:'113.324520',
-    y:'23',
-    markers: [{
-      // iconPath: "../images/map.png",
-      id: 1,
-      latitude: 23,
-      longitude: 113.32452,
-      callout:{
-        content: "广州长隆旅游度假区",
-        bgColor: "#fff",
-        color: "#333",
-        fontSize:18,
-        padding:10,
-        borderRadius:5,
-        display:'ALWAYS'
-      }
-      
-    }]
   },
 
   /**
@@ -40,12 +59,17 @@ Page({
     wx.request({
       url: app.globalData.url + 'api/index/trip_cat_list',
       success:function(res){
-        console.log(res)
+        console.log(res.data)
         that.setData({
-          nav:res.data.data
+          nav:res.data.data,
+          title: res.data.data[0].title,
+          id: res.data.data[0].id
         })
       }
     })
+    setTimeout(function(){
+      travelList(that)
+    },500)
   },
 
   /**
