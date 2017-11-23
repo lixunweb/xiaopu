@@ -1,7 +1,7 @@
 <!--pages/tool/tool.wxml-->
 <view class='box'>
   <view class='tool'><navigator url='../hand/hand'><image src='../images/tool1.gif'></image>随手拍</navigator></view>
-  <view class='tool'><image src='../images/tool2.gif'></image>垃圾回收</view>
+  <view class='tool'><navigator url='../trash/trash'><image src='../images/tool2.gif'></image>垃圾回收</navigator></view>
   <view class='tool'><navigator url='../people/people'><image src='../images/tool2.gif'></image>小堡人家</navigator></view>
   <view class='tool'></view>
   <view class='tool'></view>

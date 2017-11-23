@@ -14,6 +14,7 @@
     "pages/travel/travel",
     "pages/show/show",
     "pages/tool/tool",
+    "pages/trash/trash",
     "pages/people/people",       
     "pages/logs/logs"
   ],
